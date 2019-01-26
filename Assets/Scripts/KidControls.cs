@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class KidControls : MonoBehaviour
 {
+    // Put at the beginning
+    public AudioClip actionSound1;
+    public AudioClip actionSound2;
+
     public List<GameObject> closestsInteractables;
     public Transform rightLeg;
     public Transform leftLeg;
@@ -18,6 +22,7 @@ public class KidControls : MonoBehaviour
         public Vector3 position;
         public Quaternion rotation;
         public bool action;
+        public bool playSound;
     }
     List<SimpleTransform> history;
 
@@ -33,7 +38,19 @@ public class KidControls : MonoBehaviour
     {
         if (replaying)
         {
+            if (history.Count > 0)
+            {
+                this.transform.position = history[0].position;
+                this.transform.rotation = history[0].rotation;
+                // TODO do something with 
+                //history[0].action;
+                if (history[0].playSound)
+                {
+                    SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
+                }
 
+                history.RemoveAt(0);
+            }
         }
         else
         {
@@ -46,6 +63,12 @@ public class KidControls : MonoBehaviour
             {
                 transform.RotateAround(rightLeg.position, new Vector3(0.0f, 1.0f, 0.0f), rotationSpeed * Time.deltaTime);
             }
+
+            if (Input.GetButtonUp("Button1") || Input.GetButtonUp("Button2"))
+            {
+                SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
+            }
+
 
             if (Input.GetButton("Button3"))
             {
@@ -68,8 +91,9 @@ public class KidControls : MonoBehaviour
                             {
                                 position = transform.position,
                                 rotation = transform.rotation,
-                                action = Input.GetButton("Button3")
-                            }
+                                action = Input.GetButton("Button3"),
+                                playSound = Input.GetButtonDown("Button1") || Input.GetButtonDown("Button2")
+                }
                 );
             }
         }
