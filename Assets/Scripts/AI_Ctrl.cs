@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class AI_Ctrl : MonoBehaviour
 {
+    // Members
+   
+    public GameObject agent;
+    public GameObject kid;   
+    
+    private AIStates stateValue = 0;
+    
     // Types
     public enum AIStates
     {
@@ -12,24 +19,7 @@ public class AI_Ctrl : MonoBehaviour
         idle
     };
 
-
-
-    // General functions
-    public float distanceBetweenObjects(GameObject Ob1, GameObject Ob2)
-    {
-        return (Ob1.GetComponent<Transform>().position - Ob2.GetComponent<Transform>().position).magnitude;
-    }
-
-
-
-    // Members
-    public Transform someLocation;
-    public GameObject agent;
-    public GameObject kid;
-    public KidControls kidScript;
-    
-    
-    private AIStates stateValue = 0;
+                
 
 
     //Utility functions
@@ -53,12 +43,12 @@ public class AI_Ctrl : MonoBehaviour
 
     public void doChasing()
     {
-        agent.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
     }
 
     public void doBlocking()
     {
-        agent.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
     }
 
     public void doIdle()
