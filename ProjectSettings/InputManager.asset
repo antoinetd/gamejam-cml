@@ -279,12 +279,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Button1
-    descriptiveName: 
+    descriptiveName: Turn Left
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 1
     altNegativeButton: 
-    altPositiveButton: joystick button 1
+    altPositiveButton: joystick button 4
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -295,12 +295,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Button2
-    descriptiveName: 
+    descriptiveName: Turn Right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 2
     altNegativeButton: 
-    altPositiveButton: joystick button 2
+    altPositiveButton: joystick button 5
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -311,12 +311,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Button3
-    descriptiveName: 
+    descriptiveName: Action
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 3
     altNegativeButton: 
-    altPositiveButton: joystick button 3
+    altPositiveButton: joystick button 2
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
