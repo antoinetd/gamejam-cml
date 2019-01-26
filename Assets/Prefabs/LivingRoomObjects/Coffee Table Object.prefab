@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1007439759006433890}
   - component: {fileID: 8598537115976766116}
   - component: {fileID: 2988366213035993786}
+  - component: {fileID: 1681297705}
   m_Layer: 0
   m_Name: Coffee Table Object
   m_TagString: Untagged
@@ -123,6 +124,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1681297705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988366213035993791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a38f5076261be40970393c9d2d9ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCalled: 0
+  actionSound1: {fileID: 8300000, guid: be22fd8f30ff5fa4f9a93ea4bfd32946, type: 3}
+  actionSound2: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
 --- !u!1001 &2988366211658457187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,14 +193,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
