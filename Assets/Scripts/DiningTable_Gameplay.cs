@@ -23,15 +23,6 @@ public class DiningTable_Gameplay : MonoBehaviour, IInteractable
         PlateRigidBody = Plate.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    // For debugging purposes
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            OnAction();
-        }
-    }
 
     // Action to be called by the operator
     // When the action is called, it will apply a force to the plate 
