@@ -10,8 +10,7 @@ public class AI_Ctrl : MonoBehaviour
     public GameObject kid;
 
     private float closestObject;
-    private float kidDistance; 
-    
+    private float kidDistance;     
     
     private AIStates stateValue = 0;
     
@@ -84,10 +83,17 @@ public class AI_Ctrl : MonoBehaviour
     void Update()
     {
         doDistances(); 
-        // boolean 
-        // conditional 1 if parent < kid.distance = 1
-        // conditonal 2 if parent.distance > 1 -> chasing
-       
+
+        if (kidDistance > 1.0)
+        {
+            stateValue = AIStates.chasing; 
+        }
+
+        if (closestObject < 1.0)
+        {
+            stateValue = AIStates.blocking;
+        }
+             
       switch(stateValue)
         {
             case AIStates.blocking:

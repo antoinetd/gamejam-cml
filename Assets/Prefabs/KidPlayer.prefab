@@ -198,7 +198,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.19184794, y: 0.51395726, z: 0.036999702}
+  m_ConnectedAnchor: {x: 0.19184792, y: 0.51395726, z: 0.03699994}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -576,7 +576,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.20705004, y: 0.51882243, z: 0.019438744}
+  m_ConnectedAnchor: {x: -0.20705003, y: 0.51882243, z: 0.019438505}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -828,13 +828,13 @@ Rigidbody:
   m_GameObject: {fileID: 4894811736163893014}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 2.37
-  m_AngularDrag: 3.11
+  m_Drag: 0
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &6977373225620795039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,8 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c62aff2a984b0144984973adbd34ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionSound1: {fileID: 0}
-  actionSound2: {fileID: 0}
+  actionSound1: {fileID: 8300000, guid: 71e242045c1b47446a436eb2f2bde96b, type: 3}
+  actionSound2: {fileID: 8300000, guid: 71e242045c1b47446a436eb2f2bde96b, type: 3}
   closestsInteractables: []
   rightLeg: {fileID: 4884646908127402738}
   leftLeg: {fileID: 4884646908127402750}
