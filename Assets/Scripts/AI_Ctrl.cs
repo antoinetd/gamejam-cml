@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class AI_Ctrl : MonoBehaviour
 {
-
-    // Members   
-    public GameObject agent;
-    public GameObject kid;
-   
-
-    private AIStates stateValue;
-
     // Types
     public enum AIStates
     {
@@ -26,8 +18,18 @@ public class AI_Ctrl : MonoBehaviour
     public float distanceBetweenObjects(GameObject Ob1, GameObject Ob2)
     {
         return (Ob1.GetComponent<Transform>().position - Ob2.GetComponent<Transform>().position).magnitude;
-    } 
+    }
 
+
+
+    // Members
+    public Transform someLocation;
+    public GameObject agent;
+    public GameObject kid;
+    public KidControls kidScript;
+    
+    
+    private AIStates stateValue = 0;
 
 
     //Utility functions
@@ -76,8 +78,7 @@ public class AI_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        setState(1); 
+       
       switch(stateValue)
         {
             case AIStates.blocking:
@@ -90,7 +91,6 @@ public class AI_Ctrl : MonoBehaviour
                 doIdle();
                 break; 
         }
-        Debug.Log(stateValue);
-       
+        //var something = kidScript.closestsInteractables;
     }
 }
