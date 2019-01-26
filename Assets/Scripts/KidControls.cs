@@ -64,9 +64,15 @@ public class KidControls : MonoBehaviour
                 transform.RotateAround(rightLeg.position, new Vector3(0.0f, 1.0f, 0.0f), rotationSpeed * Time.deltaTime);
             }
 
+            Rigidbody rb = GetComponent<Rigidbody>();
             if (Input.GetButtonUp("Button1") || Input.GetButtonUp("Button2"))
             {
+                rb.freezeRotation = true;
                 SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
+            }
+            else
+            {
+                rb.freezeRotation = false;
             }
 
 

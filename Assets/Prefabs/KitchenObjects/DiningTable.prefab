@@ -78,6 +78,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plate: {fileID: 9188613085259789194}
   ActionCalled: 0
+  actionSound1: {fileID: 8300000, guid: 6c2f1c3e37dac774b8c1a0eb1be52349, type: 3}
+  actionSound2: {fileID: 8300000, guid: be22fd8f30ff5fa4f9a93ea4bfd32946, type: 3}
 --- !u!1001 &2705198462413108395
 PrefabInstance:
   m_ObjectHideFlags: 0
