@@ -1,18 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: b2a4d858b900c6c4bb3307f2f1ec0a9b
-=======
-guid: 8f2c3bafca85e8e40ae991100ddada3a
->>>>>>> 43706689ed63ddea5b9921c85c51222e29923fa2
+guid: e65a682e105135844b6f0d808f49135a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 08 - Default
+    2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box003
+    4300000: Table_Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
