@@ -7,7 +7,11 @@ public class AI_Ctrl : MonoBehaviour
     // Members
    
     public GameObject agent;
-    public GameObject kid;   
+    public GameObject kid;
+
+    private float closestObject;
+    private float kidDistance; 
+    
     
     private AIStates stateValue = 0;
     
@@ -17,6 +21,8 @@ public class AI_Ctrl : MonoBehaviour
         chasing,
         blocking,
         idle
+
+          
     };
 
                 
@@ -24,7 +30,7 @@ public class AI_Ctrl : MonoBehaviour
 
     //Utility functions
     public void setState(int someState)
-    {
+    {        
         switch(someState)
         {
             case 0:
@@ -56,6 +62,15 @@ public class AI_Ctrl : MonoBehaviour
         //
     }
 
+    public void doDistances()
+    {
+        kidDistance = Vector3.Distance(this.gameObject.GetComponent<Transform>().position, kid.gameObject.GetComponent<Transform>().position);
+        foreach (GameObject g in kid.GetComponent<KidControls>().closestsInteractables)
+        {
+            //TODO: Determine the cloest object 
+        }
+        
+    }
 
 
     // Start is called before the first frame update
@@ -68,6 +83,10 @@ public class AI_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        doDistances(); 
+        // boolean 
+        // conditional 1 if parent < kid.distance = 1
+        // conditonal 2 if parent.distance > 1 -> chasing
        
       switch(stateValue)
         {

@@ -133,12 +133,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2988366213035993791}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: c2a38f5076261be40970393c9d2d9ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCalled: 0
+  actionSound1: {fileID: 8300000, guid: be22fd8f30ff5fa4f9a93ea4bfd32946, type: 3}
+  actionSound2: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
+=======
   m_Script: {fileID: 11500000, guid: 83175c029a47cad46a84ddc652e9774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ActionCalled: 0
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
+>>>>>>> 65bf5a63ce1e71c4631aab2c89343632b3bcf83f
 --- !u!1001 &2988366211658457187
 PrefabInstance:
   m_ObjectHideFlags: 0
