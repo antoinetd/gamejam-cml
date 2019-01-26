@@ -7,7 +7,6 @@ public class KidControls : MonoBehaviour
     public List<GameObject> closestsInteractables;
     public Transform rightLeg;
     public Transform leftLeg;
-    public SphereCollider actionSphere;
 
     public float rotationSpeed = 90f;
 
