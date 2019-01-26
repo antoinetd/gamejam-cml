@@ -7,6 +7,8 @@ public class DiningTable_Gameplay : MonoBehaviour, IInteractable
     // Plate Game Objects to make explode when the action is called
     public GameObject Plate;
     public bool ActionCalled; // Debug Output
+    public AudioClip actionSound1;  
+    public AudioClip actionSound2;
 
     // Private variable for the plate rigid body
     private Rigidbody PlateRigidBody;
@@ -39,5 +41,7 @@ public class DiningTable_Gameplay : MonoBehaviour, IInteractable
 
         Vector3 Force = new Vector3(20.0f, 30.0f, 20.0f);
         PlateRigidBody.AddForce(Force);
+
+        SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
     }
 }
