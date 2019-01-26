@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KidControls : MonoBehaviour
 {
+    public List<GameObject> closestsInteractables;
     public Transform rightLeg;
     public Transform leftLeg;
     public SphereCollider actionSphere;
@@ -24,6 +25,7 @@ public class KidControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        closestsInteractables = new List<GameObject>();
         history = new List<SimpleTransform>();
     }
 
@@ -71,6 +73,22 @@ public class KidControls : MonoBehaviour
                             }
                 );
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.GetComponent<IInteractable>() != null)
+        {
+            closestsInteractables.Add(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (closestsInteractables.Count > 0)
+        {
+            closestsInteractables.Remove(collision.gameObject);
         }
     }
 }
