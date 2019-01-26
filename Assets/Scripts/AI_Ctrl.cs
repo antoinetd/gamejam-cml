@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class AI_Ctrl : MonoBehaviour
 {
-    public Transform someLocation; 
+    public Transform someLocation;
+    public GameObject agent; 
 
 
     // Start is called before the first frame update
     void Start()
     {
-     NavMeshAgent agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+       
+        
     }
 
     // Update is called once per frame
     void Update()
-    {     
-        agent.destination = someLocation.position;
+    {
+        agent.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = someLocation.position; 
     }
 }
