@@ -9,8 +9,10 @@ public class AI_Ctrl : MonoBehaviour
     public GameObject agent;
     public GameObject kid;
 
-    private float closestObject;
-    private float kidDistance;     
+    private float closestObjectDistance;
+    private Vector3 closestObjectPosition;
+    private float kidParentDistance; 
+
     
     private AIStates stateValue = 0;
     
@@ -61,12 +63,28 @@ public class AI_Ctrl : MonoBehaviour
         //
     }
 
+    float getDistance(GameObject Ob1, GameObject Ob2)
+    {
+        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob1.GetComponent<Transform>().position);
+    }
+
     public void doDistances()
     {
-        kidDistance = Vector3.Distance(this.gameObject.GetComponent<Transform>().position, kid.gameObject.GetComponent<Transform>().position);
-        foreach (GameObject g in kid.GetComponent<KidControls>().closestsInteractables)
+        kidParentDistance = getDistance(this.gameObject, kid.gameObject);
+
+        closestObjectDistance = -1;
+        KidControls KC = kid.GetComponent<KidControls>();
+        if (KC != null)
         {
-            //TODO: Determine the cloest object 
+            foreach (GameObject currentGO in kid.GetComponent<KidControls>().closestsInteractables)
+            {
+                float kidCurrentGODistance = getDistance(currentGO, kid);
+                if (kidCurrentGODistance > closestObjectDistance)
+                {
+                    closestObjectDistance = kidCurrentGODistance;
+                    closestObjectPosition = currentGO.GetComponent<Transform>().position;
+                }
+            }
         }
         
     }
@@ -84,12 +102,12 @@ public class AI_Ctrl : MonoBehaviour
     {
         doDistances(); 
 
-        if (kidDistance > 1.0)
+        if (kidParentDistance > 1.0)
         {
             stateValue = AIStates.chasing; 
         }
 
-        if (closestObject < 1.0)
+        if (closestObjectDistance < 1.0)
         {
             stateValue = AIStates.blocking;
         }
