@@ -67,7 +67,7 @@ public class AI_Ctrl : MonoBehaviour
         kidDistance = Vector3.Distance(this.gameObject.GetComponent<Transform>().position, kid.gameObject.GetComponent<Transform>().position);
         foreach (GameObject g in kid.GetComponent<KidControls>().closestsInteractables)
         {
-
+            //TODO: Determine the cloest object 
         }
         
     }
