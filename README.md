@@ -38,4 +38,4 @@ Double click on a C# file, it will open Visual Studio or a code editor of your c
 ### Fetch the latest version
 You should try to keep up to date as best as you can
 
-To do so, simply press "pull" in SourceTree, this will fetch the latest changes
+To do so, simply press "pull" in SourceTree, this will fetch the latest changes.
