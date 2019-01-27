@@ -1,37 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; 
 
 public class AI_Ctrl : MonoBehaviour
 {
-    // Members
-   
+    // Members   
     public GameObject agent;
     public GameObject kid;
-
+   
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
     private float kidParentDistance;
+
+    private AIStates stateValue;
     private float midpointParentDistance; // midpoint between kid and closest object
     private Vector3 midpointPosition;
 
-
-
-    private AIStates stateValue = 0;
     
     // Types
     public enum AIStates
     {
         chasing,
         blocking,
-        idle
-
-          
-    };
-
-                
-
-
+        idle          
+    };                
+    
     //Utility functions
     public void setState(int someState)
     {        
@@ -50,20 +44,21 @@ public class AI_Ctrl : MonoBehaviour
                 break;
         }
     }
-
+    int frameCount = 0; 
     public void doChasing()
     {
-        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+        this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
+        // Debug.Log(this.GetComponent<NavMeshAgent>().destination);  
     }
 
     public void doBlocking()
     {
-        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+       // this.GetComponent<NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
     }
 
     public void doIdle()
     {
-        //
+      
     }
 
     float getDistance(GameObject Ob1, GameObject Ob2)
@@ -73,8 +68,7 @@ public class AI_Ctrl : MonoBehaviour
 
     public void doDistances()
     {
-        kidParentDistance = getDistance(this.gameObject, kid.gameObject);
-        Debug.Log(kidParentDistance);
+        this.kidParentDistance = getDistance(this.gameObject, kid); 
 
         closestObjectDistance = -1;
         midpointParentDistance = -1;
@@ -110,18 +104,15 @@ public class AI_Ctrl : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        doDistances(); 
+    {       
+        doDistances();
+      
+        Debug.Log(kidParentDistance);
 
-        if (kidParentDistance > 1.0)
-        {
-            stateValue = AIStates.chasing; 
-        }
-
-        if (closestObjectDistance < 1.0)
-        {
-            stateValue = AIStates.blocking;
-        }
+        if (kidParentDistance > 0.01f)
+        {           
+            setState(1); 
+        }       
              
       switch(stateValue)
         {
@@ -135,6 +126,7 @@ public class AI_Ctrl : MonoBehaviour
                 doIdle();
                 break; 
         }
-        //var something = kidScript.closestsInteractables;
+
+        Debug.Log(stateValue); 
     }
 }
