@@ -9,11 +9,11 @@ public class AI_Ctrl : MonoBehaviour
     public GameObject kid;
     public float biasToBlocking = 1.0f;
     public AIStates DebugAIState = AIStates.idle;    
+    public float kidParentDistance;
 
     // Private members
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
-    private float kidParentDistance;
     private AIStates stateValue;
     private float midpointParentDistance; // midpoint between kid and closest object
     private Vector3 midpointPosition;
