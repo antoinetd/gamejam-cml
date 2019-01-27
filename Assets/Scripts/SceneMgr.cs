@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class SceneMgr : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class SceneMgr : MonoBehaviour
             if (parentControls != null)
             {
                 parentControls.activateManualControls = true;
+                var navMesh = parentControls.gameObject.GetComponent<NavMeshAgent>();
+                if (navMesh != null) navMesh.enabled = false;
             }
             if (ai_ctrl != null)
             {
