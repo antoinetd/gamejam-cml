@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Camera_Script : MonoBehaviour
 {
-    //public GameObject parent;
-    public GameObject kid;
-    public GameObject parent;
-    public float maxKidParentDistance;
-    public float minFieldOfView;
-   // public Transform lookAt;
+    // Fields
+    public GameObject kid;//connect to the kid's body
+    public GameObject parent;//connect to the parent's body
+    public float maxKidParentDistance;//the distance after which the camera zooms out completely. As it goes up zooming is smoother
+    public float minFieldOfView;//minimum field of view used
+    public Vector3 ActionOffset;
+    public float showKidParDistance;
 
-    //private Transform initialTransform;
-    //private Quaternion initialOrientation;
-    //private Transform lookAt;
-    //private Vector3 previousPosition;
+    // Some stuff
     private Camera cam;
     private Transform lookAt;
     private Transform camTransform;
@@ -22,7 +20,7 @@ public class Camera_Script : MonoBehaviour
     private Vector3 initialPosition;
     private float initialFOV;
 
-    //
+    // Variables for lowpass filters
     private Vector3 filtPosition;
     private float filtFOV;
 
@@ -38,21 +36,9 @@ public class Camera_Script : MonoBehaviour
         initialRelativePosition = camPosition - kid.transform.position;
         initialFOV = cam.fieldOfView;
         filtFOV = initialFOV;
-        //cam.fieldOfView = 62.0f;
-
-        //lookAt = kid.transform;
-        //camTransform.in
-        //Debug.Log(initialRelativePosition);
-        //Debug.Log(kid.transform.position);
-        //Debug.Log(transform.position);
 
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // Late update called after player positions updated
     void LateUpdate()
@@ -70,15 +56,17 @@ public class Camera_Script : MonoBehaviour
         }
        else
         {
-            targetPosition = 0.5f * curKidPos + 0.5f * curParPos + initialRelativePosition;
+            targetPosition = 0.5f * curKidPos + 0.5f * curParPos + ActionOffset;
             // Just a clamp
             FOVScale = Mathf.Max(Mathf.Min(kidParentDist / maxKidParentDistance, 1.0f), minFieldOfView / initialFOV);
             targetFOV = FOVScale * initialFOV;        
         }
+        //some lowpass filters
         filtPosition = 0.9f * filtPosition + 0.1f * targetPosition;
         filtFOV = 0.9f * filtFOV + 0.1f * targetFOV;
         cam.fieldOfView = filtFOV;
         camTransform.position = filtPosition;
+        showKidParDistance = kidParentDist;
     }
 
 }
