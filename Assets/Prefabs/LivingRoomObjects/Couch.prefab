@@ -4724,7 +4724,7 @@ Transform:
   m_GameObject: {fileID: 3426194191520573566}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.6, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7188381889142262622}
   m_RootOrder: 2
@@ -4770,8 +4770,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_DrawMode: 1
+  m_Size: {x: 2, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4839,6 +4839,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.016, y: 2.2835026, z: 0.5378562}
   m_Center: {x: 0, y: -0.03903222, z: 0.26892805}
+--- !u!114 &935175018619429567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669361024494256690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c704c7b431f2ff04ea96f9f6c6d8d3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCalled: 0
+  ParticleObject: {fileID: 1710340564}
+  HPBar: {fileID: 3426194191520573566}
+  actionSound: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
+  ObjectInitialHealth: 5
 --- !u!1001 &7669361024494290066
 PrefabInstance:
   m_ObjectHideFlags: 0
