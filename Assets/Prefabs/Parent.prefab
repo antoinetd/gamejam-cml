@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 601490703770786315}
   - component: {fileID: 601490703770786312}
   - component: {fileID: 601490703770786313}
+  - component: {fileID: 4834743336528008846}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -105,7 +106,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 0.5
   m_Acceleration: 2
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -137,6 +138,25 @@ MonoBehaviour:
   maxPursuitTime: 5
   maxPursuitDistance: 3
   parentForgivenessTimer: 0
+--- !u!114 &4834743336528008846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601490703770786318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7edfa1f55be3240b698c9928e852c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateManualControls: 0
+  movementSpeed: 0.2
+  turnSpeed: 60
+  exhausted: 0
+  stamina: 3
+  runningSpeedMultiplier: 3
+  exhausedSpeedMultiplier: 0.3
 --- !u!1 &1183729597852296462
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 596ff691a3556cf47bf4292b9f023049, type: 2}
+  - {fileID: 2100000, guid: 7c80bdce3d405fa40a3a00e3e8ef32d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
