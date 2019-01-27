@@ -108,19 +108,21 @@ public class KidControls : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.GetComponent<IInteractable>() != null)
+        if (collision.GetComponent<IInteractable>() != null)
         {
+
             closestsInteractables.Add(collision.gameObject);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
         if (closestsInteractables.Count > 0)
         {
-            closestsInteractables.Remove(collision.gameObject);
+            closestsInteractables.Remove(other.gameObject);
         }
     }
+
 }
