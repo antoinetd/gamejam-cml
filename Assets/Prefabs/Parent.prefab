@@ -106,7 +106,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 1
-  m_Acceleration: 4
+  m_Acceleration: 2
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 1
@@ -227,19 +227,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.315
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}
-    - target: {fileID: 2300002, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}
     - target: {fileID: 2300004, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}
     - target: {fileID: 2300006, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}
+    - target: {fileID: 2300000, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}
+    - target: {fileID: 2300002, guid: 1f7604badc9f67042a4efeda35c4de70, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3ae84dbd7b6501848b91f650534e4949, type: 2}

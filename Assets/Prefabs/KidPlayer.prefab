@@ -4915,7 +4915,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ae9d4bc5eab80574fb6185139ae936fe, type: 2}
-  - {fileID: 2100000, guid: ae9d4bc5eab80574fb6185139ae936fe, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5065,7 +5065,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.19184794, y: 0.51395726, z: 0.037}
+  m_ConnectedAnchor: {x: 0.19184792, y: 0.51395726, z: 0.036999702}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -5443,7 +5443,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.20705004, y: 0.51882243, z: 0.019438423}
+  m_ConnectedAnchor: {x: -0.20705004, y: 0.51882243, z: 0.019438744}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -5724,7 +5724,7 @@ MonoBehaviour:
   leftLeg: {fileID: 4884646908127402750}
   rightArm: {fileID: 4884646908127402736}
   leftArm: {fileID: 4884646908127402748}
-  rotationSpeed: 1000
+  rotationSpeed: 300
   armForce: 200
   recording: 1
   replaying: 0
