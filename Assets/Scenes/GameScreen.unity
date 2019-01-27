@@ -4751,6 +4751,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1537099761}
     m_Modifications:
+    - target: {fileID: 3315339456534967710, guid: 926b4ea1e03c0214190a1030f1cafdf1,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3167508743542176584, guid: 926b4ea1e03c0214190a1030f1cafdf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4805,11 +4810,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3315339456534967710, guid: 926b4ea1e03c0214190a1030f1cafdf1,
-        type: 3}
-      propertyPath: m_Name
-      value: SoundManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 926b4ea1e03c0214190a1030f1cafdf1, type: 3}
@@ -4885,11 +4885,6 @@ PrefabInstance:
       propertyPath: kid
       value: 
       objectReference: {fileID: 1207337373}
-    - target: {fileID: 601490703770786312, guid: 10ef6e10db6d39e4ea12bd2dce4595f8,
-        type: 3}
-      propertyPath: m_Speed
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10ef6e10db6d39e4ea12bd2dce4595f8, type: 3}
 --- !u!1 &2039665934
