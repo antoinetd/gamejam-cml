@@ -71,6 +71,7 @@ public class SceneMgr : MonoBehaviour
             {
                 ai_ctrl.enableParent = false;
             }
+            GameManager_Scoring.GetInstance().isAdult = true;
         }
     }
 
