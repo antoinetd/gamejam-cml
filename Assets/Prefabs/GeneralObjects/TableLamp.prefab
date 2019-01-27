@@ -58,8 +58,8 @@ MonoBehaviour:
   ActionCalled: 0
   actionSound1: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
   actionSound2: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
-  ForceVector: {x: 200, y: 50, z: 200}
-  DestroyedObjectScoreValue: 0
+  ForceVector: {x: 200, y: 100, z: 200}
+  DestroyedObjectScoreValue: 2
 --- !u!1 &7643824811111331098
 GameObject:
   m_ObjectHideFlags: 0
