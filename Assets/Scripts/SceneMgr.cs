@@ -5,18 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class SceneMgr : MonoBehaviour
 {
+    public float gtimer = 120f;
     private int frameCounter = 0;
     private bool doSwitch = false;
+    public float currentTimer = 120f;
     List<KidControls.SimpleTransform> history_backup;
 
     private void Start()
     {
+        currentTimer = gtimer;
         DontDestroyOnLoad(this);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("ChangeToParent"))
+        currentTimer -= Time.deltaTime;
+
+        if (Input.GetButtonDown("ChangeToParent") || currentTimer < 0f)
         {
             KidControls kidControls = (KidControls)FindObjectOfType(typeof(KidControls));
             // If we are already in parent mode do nothing
@@ -68,6 +73,7 @@ public class SceneMgr : MonoBehaviour
 
     public void doChangeScene(int someScene)
     {
+        currentTimer = gtimer;
         switch (someScene)
         {
             case 0:
