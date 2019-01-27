@@ -23,6 +23,11 @@ public class ParentManualControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!activateManualControls)
+        {
+            return;
+        }
+
         bool isRunning = false;
         if (Input.GetButton("Button1") || Input.GetButton("Button2") || Input.GetButton("Button3") || Input.GetButton("Button4"))
         {

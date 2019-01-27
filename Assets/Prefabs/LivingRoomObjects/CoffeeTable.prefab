@@ -84,6 +84,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672542998152553637}
     m_Modifications:
+    - target: {fileID: 100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
+      propertyPath: m_Name
+      value: Coffee Table
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0048024748
@@ -128,10 +132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
-      propertyPath: m_Name
-      value: Coffee Table
-      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 940d86097bc618642bd17fab8802fdc2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
 --- !u!1 &6713678413425391609 stripped

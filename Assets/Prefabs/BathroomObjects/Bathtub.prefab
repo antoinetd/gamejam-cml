@@ -78,7 +78,7 @@ MonoBehaviour:
   LoopSound: {fileID: 8300000, guid: ecbb0e5a95199bd498a17c2e9cbf88bf, type: 3}
   actionSound1: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
   actionSound2: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
-  DestroyedObjectScoreValue: 0
+  DestroyedObjectScoreValue: 4
 --- !u!1001 &6497944405581134836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 22ca1e838e9c82a409b7562566fece04, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ac88a0acf6b6794c8409bf4ea670c2e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ca1e838e9c82a409b7562566fece04, type: 3}
 --- !u!1 &6497944405581233492 stripped

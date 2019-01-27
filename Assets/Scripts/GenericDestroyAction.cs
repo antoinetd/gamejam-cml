@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GenericDestroyAction : MonoBehaviour, IInteractable
 {
@@ -9,6 +10,7 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
     public GameObject ParticleObject;
     public GameObject HPBar;
     public AudioClip actionSound;
+    public GameObject TextObject; //
     public float ObjectInitialHealth;
     public float DestroyedObjectScoreValue;
 
@@ -17,6 +19,8 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
     private SpriteRenderer HPBarSpriteRenderer;
     private float HPBarSpriteInitialWidth;
     private float HPBarSpriteInitialHeight;
+    private TextMeshPro TextMeshObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,9 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
         HPBarSpriteInitialWidth = HPBarSpriteRenderer.size.x;
         HPBarSpriteInitialHeight = HPBarSpriteRenderer.size.y;
 
+
+        // Prepare the text box
+        TextMeshObject = TextObject.GetComponent<TextMeshPro>();
     }
 
     public void OnAction()
@@ -52,6 +59,9 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
             {
                 HPBarSpriteRenderer.color = Color.red;
             }
+
+            // Update the text of the text box
+            TextMeshObject.text = string.Format("{0:N0}", ObjectHealth) + " NP";  
 
         }
 

@@ -121,8 +121,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278206429
+  m_fontColor: {r: 0.8679245, g: 0.24797845, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -315,6 +315,7 @@ MonoBehaviour:
   ParticleObject: {fileID: 5491307007154225322}
   HPBar: {fileID: 1173389992007110344}
   actionSound: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
+  TextObject: {fileID: 1358224804}
   ObjectInitialHealth: 12
   DestroyedObjectScoreValue: 12
 --- !u!1 &5491307007154225322

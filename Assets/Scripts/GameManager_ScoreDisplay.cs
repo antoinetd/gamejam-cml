@@ -43,8 +43,10 @@ void Start()
     {
         GameScore = GameManager_Scoring.GetInstance().GetGameScore();
 
+        
         currentTimer -= Time.deltaTime;
 
+<<<<<<< HEAD
         if (currentTimer <= 0)
         {
             currentTimer = 0f;
@@ -53,6 +55,12 @@ void Start()
 
         // Update the sprite size
         HPBarSpriteRenderer.size = new Vector2(HPBarSpriteInitialWidth * currentTimer / GameRoundTime, HPBarSpriteInitialHeight);
+=======
+        if (currentTimer <= 0.0)
+        {
+            currentTimer = 0.0f;
+        }
+>>>>>>> 4eb408c152dd05be537a5eda0090a656a1dbdde4
 
         TextMeshObject.text = "Nostalgia Points: " + string.Format("{0:N0}", GameScore); //+ "\nCountdown: " + string.Format("{0:N0}", currentTimer)
     }
