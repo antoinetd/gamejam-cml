@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &68528719008780236
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227379275881365905}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &5967388855680337670
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227379275881365905}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32972482
+  m_Height: 1.0818018
+  m_Direction: 2
+  m_Center: {x: 0.0053766966, y: 6.302628e-16, z: 0.5443507}
+--- !u!114 &8548228494397510469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227379275881365905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c8c8ada0cec6947b8c545bb61af657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionCalled: 0
+  actionSound1: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
+  actionSound2: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
+  ForceVector: {x: 200, y: 50, z: 200}
 --- !u!1 &7643824811111331098
 GameObject:
   m_ObjectHideFlags: 0
@@ -38,10 +84,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7643824811111331099}
     m_Modifications:
-    - target: {fileID: 100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
-      propertyPath: m_Name
-      value: TableLamp
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -86,8 +128,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
+      propertyPath: m_Name
+      value: TableLamp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
+--- !u!1 &3227379275881365905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: e65a682e105135844b6f0d808f49135a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3227379275881269041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3227379275881143729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e65a682e105135844b6f0d808f49135a,
