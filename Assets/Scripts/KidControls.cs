@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KidControls : MonoBehaviour
 {
+    public GameObject actionSphere;
+
     // Put at the beginning
     public AudioClip actionSound1;
     public AudioClip actionSound2;
@@ -11,8 +13,11 @@ public class KidControls : MonoBehaviour
     public List<GameObject> closestsInteractables;
     public Transform rightLeg;
     public Transform leftLeg;
+    public Transform rightArm;
+    public Transform leftArm;
 
     public float rotationSpeed = 90f;
+    public float armForce = 100f;
 
     public bool recording = true;
     public bool replaying = false;
@@ -74,7 +79,7 @@ public class KidControls : MonoBehaviour
                 rb.freezeRotation = false;
             }
 
-            if (Input.GetButton("Button3"))
+            if (Input.GetButtonDown("Button3"))
             {
                 DoAction();
             }
@@ -85,8 +90,8 @@ public class KidControls : MonoBehaviour
                             {
                                 position = transform.position,
                                 rotation = transform.rotation,
-                                action = Input.GetButton("Button3"),
-                                playSound = Input.GetButtonDown("Button1") || Input.GetButtonDown("Button2")
+                                action = Input.GetButtonDown("Button3"),
+                                playSound = Input.GetButtonUp("Button1") || Input.GetButtonUp("Button2")
                 }
                 );
             }
@@ -95,9 +100,13 @@ public class KidControls : MonoBehaviour
 
     private void DoAction()
     {
-        Vector3 transformPos = transform.position;
-        transformPos.z = transformPos.z + 0.3f;
-        Collider[] hitColliders = Physics.OverlapSphere(transformPos, 0.7f);
+        Vector3 charPos = transform.position;
+        charPos.z -= 0.2f;
+
+        leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, armForce));
+        rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, armForce));
+
+        Collider[] hitColliders = Physics.OverlapSphere(actionSphere.transform.position, actionSphere.GetComponent<SphereCollider>().radius);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             IInteractable obj = hitColliders[i].GetComponent<IInteractable>();
