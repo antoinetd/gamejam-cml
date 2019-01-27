@@ -58,8 +58,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 37.473133, y: 76.273285, z: 30.294466}
-  m_Center: {x: -0.0000038146973, y: -1.7232898, z: 15.199729}
+  m_Size: {x: 1, y: 2.0055761, z: 0.98425674}
+  m_Center: {x: 0, y: -0.16478103, z: 0.5129539}
 --- !u!114 &1487164846135691633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   LoopSound: {fileID: 8300000, guid: ecbb0e5a95199bd498a17c2e9cbf88bf, type: 3}
   actionSound1: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
   actionSound2: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
+  DestroyedObjectScoreValue: 0
 --- !u!1001 &6497944405581134836
 PrefabInstance:
   m_ObjectHideFlags: 0
