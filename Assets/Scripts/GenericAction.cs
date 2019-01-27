@@ -17,7 +17,7 @@ public class GenericAction : MonoBehaviour, IInteractable
         // When the action is called, it will apply a force to the plate 
         ActionCalled = true;
 
-        GetComponent<Rigidbody>().AddForce(ForceVector);
+        GetComponent<Rigidbody>().AddRelativeForce(ForceVector);
 
         SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
 
