@@ -8,8 +8,7 @@ public class AI_Ctrl : MonoBehaviour
     // Public members   
     public GameObject kid;
     public float biasToBlocking = 1.0f;
-    public AIStates DebugAIState = AIStates.idle;
-    
+    public AIStates DebugAIState = AIStates.idle;    
 
     // Private members
     private float closestObjectDistance;
@@ -95,17 +94,34 @@ public class AI_Ctrl : MonoBehaviour
         calcDistances();
 
         // Note: if midpointParentDistance == -1, the kid is not near any objects
-        if (kidParentDistance * biasToBlocking < midpointParentDistance && midpointParentDistance != -1)
+        if (kidParentDistance > 2.0f)
         {   
-            stateValue = AIStates.chasing;
-            doChasing();
+            stateValue = AIStates.chasing;           
         }
         else
         {
-            stateValue = AIStates.blocking;
-            doBlocking();
+            if (kidParentDistance * biasToBlocking < midpointParentDistance && midpointParentDistance != -1)
+            {
+                stateValue = AIStates.blocking;               
+            }              
         }
 
-        DebugAIState = stateValue;
+       
+        // State Machine - AI Behaviours 
+        switch (stateValue)
+        {
+            case AIStates.blocking:
+                doBlocking();
+                break;
+            case AIStates.chasing:
+                doChasing();
+                break;
+            case AIStates.idle:
+                doIdle();
+                break;
+        }
+
+        Debug.Log(stateValue); 
+
     }
 }
