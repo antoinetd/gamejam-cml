@@ -10,7 +10,10 @@ public class AI_Ctrl : MonoBehaviour
     public float biasToBlocking = 1.0f;
     public AIStates DebugAIState = AIStates.idle;
     public float kidParentDistance;
-    public bool EnableParent = true;
+    public bool enableParent = true;
+    public float maxPursuitTime = 5.0f;
+    public float maxPursuitDistance = 3.0f;
+    public float parentForgivenessTimer;
     
 
     // Private members
@@ -93,6 +96,7 @@ public class AI_Ctrl : MonoBehaviour
     {
         stateValue = AIStates.idle;
         DebugAIState = stateValue;
+        parentForgivenessTimer = 0.0f;
     }
 
     // Update is called once per frame
@@ -100,8 +104,18 @@ public class AI_Ctrl : MonoBehaviour
     {
         calcDistances();
 
+        if (kidParentDistance <= maxPursuitDistance)
+        {
+            parentForgivenessTimer = Mathf.Min(parentForgivenessTimer + Time.deltaTime, maxPursuitTime);
+        }
+        else
+        {
+            parentForgivenessTimer = Mathf.Max(0.0f, parentForgivenessTimer - Time.deltaTime);
+        }
+
+
         // Note: if midpointParentDistance == -1, the kid is not near any objects
-        if (!EnableParent)
+            if (!enableParent || parentForgivenessTimer == maxPursuitTime)
         {
             stateValue = AIStates.idle;
             doIdle();
