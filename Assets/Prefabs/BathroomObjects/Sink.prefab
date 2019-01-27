@@ -27,6 +27,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActionCalled: 0
   ParticleObject: {fileID: 5227718185613893554}
+  LoopSound: {fileID: 8300000, guid: ecbb0e5a95199bd498a17c2e9cbf88bf, type: 3}
+  actionSound1: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
+  actionSound2: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
 --- !u!1 &5227718185613893554
 GameObject:
   m_ObjectHideFlags: 0
