@@ -4936,6 +4936,7 @@ MonoBehaviour:
   HPBar: {fileID: 3426194191520573566}
   actionSound: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
   ObjectInitialHealth: 5
+  DestroyedObjectScoreValue: 5
 --- !u!1001 &7669361024494290066
 PrefabInstance:
   m_ObjectHideFlags: 0

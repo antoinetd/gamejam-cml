@@ -10,6 +10,7 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
     public GameObject HPBar;
     public AudioClip actionSound;
     public float ObjectInitialHealth;
+    public float DestroyedObjectScoreValue;
 
     // Private Variables
     private float ObjectHealth;
@@ -56,6 +57,13 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
 
         if (ObjectHealth == 0)
         {
+
+            // Only change the score if ActionCalled was initially off
+            if (ActionCalled == false)
+            {
+                GameManager_Scoring.GetInstance().AddToScore(DestroyedObjectScoreValue);
+            }
+
             // Action to be called by the operator
             ActionCalled = true;
 

@@ -10,6 +10,7 @@ public class GenericWaterAction : MonoBehaviour, IInteractable
 	public AudioClip LoopSound;
 	public AudioClip actionSound1;
 	public AudioClip actionSound2;
+    public float DestroyedObjectScoreValue;
 
 
 
@@ -31,8 +32,14 @@ public class GenericWaterAction : MonoBehaviour, IInteractable
         // Put in OnAction() function
 		SoundManager.instance.PlayLoop(LoopSound);
 		SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
-		
-		// Action to be called by the operator
+
+        // Only change the score if ActionCalled was initially off
+        if (ActionCalled == false)
+        {
+            GameManager_Scoring.GetInstance().AddToScore(DestroyedObjectScoreValue);
+        }
+
+        // Action to be called by the operator
         ActionCalled = true;
 
         // Trigger the particle emitter

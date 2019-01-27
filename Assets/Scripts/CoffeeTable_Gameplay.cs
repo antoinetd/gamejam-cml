@@ -8,6 +8,7 @@ public class CoffeeTable_Gameplay : MonoBehaviour, IInteractable
     public bool ActionCalled; // Debug Output
     public AudioClip actionSound1;
     public AudioClip actionSound2;
+    public float DestroyedObjectScoreValue;
 
     // Private variable for the table rigid body
     private Rigidbody TableRigidBody;
@@ -28,6 +29,12 @@ public class CoffeeTable_Gameplay : MonoBehaviour, IInteractable
     // When the action is called, it will apply a force to the plate 
     public void OnAction()
     {
+        // Only change the score if ActionCalled was initially off
+        if (ActionCalled == false)
+        {
+            GameManager_Scoring.GetInstance().AddToScore(DestroyedObjectScoreValue);
+        }
+
         ActionCalled = true;
 
         Vector3 Force = new Vector3(0.0f, 30.0f, 0.0f);
