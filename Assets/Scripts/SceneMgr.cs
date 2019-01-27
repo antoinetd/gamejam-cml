@@ -70,6 +70,10 @@ public class SceneMgr : MonoBehaviour
             if (ai_ctrl != null)
             {
                 ai_ctrl.enableParent = false;
+                var bc = ai_ctrl.GetComponent<BoxCollider>();
+                if (bc != null) bc.enabled = true;
+                var cc = ai_ctrl.GetComponent<CapsuleCollider>();
+                if (cc != null) cc.enabled = true;
             }
             GameManager_Scoring.GetInstance().isAdult = true;
         }
