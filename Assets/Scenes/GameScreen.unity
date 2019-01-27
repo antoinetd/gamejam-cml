@@ -1458,6 +1458,16 @@ PrefabInstance:
       propertyPath: parentPrefab
       value: 
       objectReference: {fileID: 1597717438}
+    - target: {fileID: 6977373225620795039, guid: 33d1f334da8385f4a8ba974a278a9827,
+        type: 3}
+      propertyPath: scoldSound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 838a924fbf9b45e4c88cd21edaf90cd0, type: 3}
+    - target: {fileID: 6977373225620795039, guid: 33d1f334da8385f4a8ba974a278a9827,
+        type: 3}
+      propertyPath: scoldSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a62a0286b03d514987241fde0989fc2, type: 3}
     - target: {fileID: 1570463313046273301, guid: 33d1f334da8385f4a8ba974a278a9827,
         type: 3}
       propertyPath: m_IsActive
