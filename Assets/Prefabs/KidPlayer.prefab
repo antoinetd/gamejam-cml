@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 596ff691a3556cf47bf4292b9f023049, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +87,7 @@ SphereCollider:
   m_GameObject: {fileID: 1446052498}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
@@ -289,7 +289,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.19184794, y: 0.51395726, z: 0.037}
+  m_ConnectedAnchor: {x: 0.19184835, y: 0.51395726, z: 0.037000224}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -667,7 +667,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.25, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.20705004, y: 0.51882243, z: 0.019438423}
+  m_ConnectedAnchor: {x: -0.20704967, y: 0.51882243, z: 0.01943864}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -945,9 +945,10 @@ MonoBehaviour:
   closestsInteractables: []
   rightLeg: {fileID: 4884646908127402738}
   leftLeg: {fileID: 4884646908127402750}
-  rightArm: {fileID: 0}
-  leftArm: {fileID: 0}
-  rotationSpeed: 250
+  rightArm: {fileID: 4884646908127402736}
+  leftArm: {fileID: 4884646908127402748}
+  rotationSpeed: 500
+  armForce: 100
   recording: 1
   replaying: 0
 --- !u!136 &279993140
