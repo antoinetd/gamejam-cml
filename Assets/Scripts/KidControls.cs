@@ -121,8 +121,10 @@ public class KidControls : MonoBehaviour
             if (parentDistance < 2f && !playingScoldSound)
             {
                 if (ai_script.DebugAIState == AI_Ctrl.AIStates.blocking)
+                {
                     SoundManager.instance.PlaySingle(scoldSound2);
-                else (ai_script.DebugAIState == AI_Ctrl.AIStates.chasing)
+                }
+                else
                     SoundManager.instance.PlaySingle(scoldSound1);
                 playingScoldSound = true;
                 //Debug.Log("Playing");
