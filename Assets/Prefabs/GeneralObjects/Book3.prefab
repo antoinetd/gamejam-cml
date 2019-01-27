@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5345498128314335831
+--- !u!1 &4538661612344341933
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5183651043741157311}
-  - component: {fileID: 5758565640505690336}
-  - component: {fileID: 6742475558357453438}
-  - component: {fileID: 8412339181006999906}
-  - component: {fileID: 4781736510972193582}
+  - component: {fileID: 4721814776862311048}
+  - component: {fileID: 7832601883549580492}
+  - component: {fileID: 8356392963379041812}
+  - component: {fileID: 6813855657780972819}
+  - component: {fileID: 233598295215828129}
   m_Layer: 0
-  m_Name: KitchenCupboard
+  m_Name: Book3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5183651043741157311
+--- !u!4 &4721814776862311048
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345498128314335831}
+  m_GameObject: {fileID: 4538661612344341933}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.8047602, y: 0.9999999, z: -4.5552835}
+  m_LocalPosition: {x: -5.112934, y: 0.9999999, z: -8.173176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5758565640505690336
+--- !u!33 &7832601883549580492
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345498128314335831}
-  m_Mesh: {fileID: 4300000, guid: d5c1eaacfa5b251419a91045ff35501b, type: 3}
---- !u!23 &6742475558357453438
+  m_GameObject: {fileID: 4538661612344341933}
+  m_Mesh: {fileID: 4300000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
+--- !u!23 &8356392963379041812
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345498128314335831}
+  m_GameObject: {fileID: 4538661612344341933}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5c1eaacfa5b251419a91045ff35501b, type: 3}
+  - {fileID: 2100000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,15 +79,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &8412339181006999906
+--- !u!65 &6813855657780972819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538661612344341933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32335648, y: 0.03130263, z: 0.24419874}
+  m_Center: {x: 0, y: -0.008895195, z: 0.12209937}
+--- !u!54 &233598295215828129
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345498128314335831}
+  m_GameObject: {fileID: 4538661612344341933}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -95,16 +108,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4781736510972193582
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345498128314335831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.016, y: 0.89354193, z: 1.1118507}
-  m_Center: {x: 0, y: 0.034262203, z: 0.55592537}
