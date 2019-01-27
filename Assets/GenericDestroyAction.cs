@@ -61,7 +61,7 @@ public class GenericDestroyAction : MonoBehaviour, IInteractable
             }
 
             // Update the text of the text box
-            TextMeshObject.text = string.Format("{0:N0}", ObjectHealth) + " HP";  
+            TextMeshObject.text = string.Format("{0:N0}", ObjectHealth) + " NP";  
 
         }
 
