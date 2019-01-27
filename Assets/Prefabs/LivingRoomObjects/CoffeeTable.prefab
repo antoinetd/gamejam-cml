@@ -76,6 +76,7 @@ MonoBehaviour:
   ActionCalled: 0
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
+  DestroyedObjectScoreValue: 2
 --- !u!1001 &6713678413425291609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,10 +84,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1672542998152553637}
     m_Modifications:
-    - target: {fileID: 100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
-      propertyPath: m_Name
-      value: Coffee Table
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0048024748
@@ -130,6 +127,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}
+      propertyPath: m_Name
+      value: Coffee Table
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb721f4b5dfa4404cbb2bd50fe51ef1c, type: 3}

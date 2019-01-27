@@ -4920,6 +4920,7 @@ MonoBehaviour:
   HPBar: {fileID: 1240455181161027719}
   actionSound: {fileID: 8300000, guid: 3a1de52d1e578ba4f9d52150d29750c9, type: 3}
   ObjectInitialHealth: 10
+  DestroyedObjectScoreValue: 10
 --- !u!1001 &8483754131613729271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4927,10 +4928,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7274608873731458884}
     m_Modifications:
-    - target: {fileID: 100000, guid: faaf631a1034ec54ea5e9b80d678cfcc, type: 3}
-      propertyPath: m_Name
-      value: ChildsBed
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: faaf631a1034ec54ea5e9b80d678cfcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -4974,6 +4971,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: faaf631a1034ec54ea5e9b80d678cfcc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: faaf631a1034ec54ea5e9b80d678cfcc, type: 3}
+      propertyPath: m_Name
+      value: ChildsBed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faaf631a1034ec54ea5e9b80d678cfcc, type: 3}

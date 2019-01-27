@@ -152,6 +152,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &4259404949697215397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197,6 +198,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &1040183822789413079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242,6 +244,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &4528370184829435077
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -287,6 +290,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &7308153435990301007
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -332,6 +336,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!1 &4614716954568133318
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +421,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &6893211158689110487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -461,6 +467,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!54 &5612431911693128360
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -506,6 +513,7 @@ MonoBehaviour:
   actionSound1: {fileID: 0}
   actionSound2: {fileID: 0}
   ForceVector: {x: -200, y: 50, z: 0}
+  DestroyedObjectScoreValue: 1
 --- !u!1001 &4614716953478488876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,10 +521,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614716954568133313}
     m_Modifications:
-    - target: {fileID: 100000, guid: 6b51227599fc44e4d8f9598b374190e6, type: 3}
-      propertyPath: m_Name
-      value: BookShelf
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6b51227599fc44e4d8f9598b374190e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -561,6 +565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b51227599fc44e4d8f9598b374190e6, type: 3}
+      propertyPath: m_Name
+      value: BookShelf
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b51227599fc44e4d8f9598b374190e6, type: 3}
 --- !u!4 &4614716953478101420 stripped
@@ -582,10 +590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614716954568133313}
     m_Modifications:
-    - target: {fileID: 100000, guid: c2807384a3f84964681d528e5bd7f7ea, type: 3}
-      propertyPath: m_Name
-      value: Book1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c2807384a3f84964681d528e5bd7f7ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -630,6 +634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c2807384a3f84964681d528e5bd7f7ea, type: 3}
+      propertyPath: m_Name
+      value: Book1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2807384a3f84964681d528e5bd7f7ea, type: 3}
 --- !u!4 &4614716953598183158 stripped
@@ -651,10 +659,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614716954568133313}
     m_Modifications:
-    - target: {fileID: 100000, guid: 6a54e83a8f708974ca3cc3e7c3ceba72, type: 3}
-      propertyPath: m_Name
-      value: Book6
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a54e83a8f708974ca3cc3e7c3ceba72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -698,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 6a54e83a8f708974ca3cc3e7c3ceba72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6a54e83a8f708974ca3cc3e7c3ceba72, type: 3}
+      propertyPath: m_Name
+      value: Book6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a54e83a8f708974ca3cc3e7c3ceba72, type: 3}
@@ -996,10 +1004,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614716954568133313}
     m_Modifications:
-    - target: {fileID: 100000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
-      propertyPath: m_Name
-      value: Book3
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.052980512
@@ -1044,6 +1048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
+      propertyPath: m_Name
+      value: Book3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9cf74a3857ac2b45a6b76e9df3283a4, type: 3}
 --- !u!1 &4614716955090513415 stripped
@@ -1065,10 +1073,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614716954568133313}
     m_Modifications:
-    - target: {fileID: 100000, guid: df02c0d0eb08dc9428e158402f704fb5, type: 3}
-      propertyPath: m_Name
-      value: Book4
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: df02c0d0eb08dc9428e158402f704fb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1112,6 +1116,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: df02c0d0eb08dc9428e158402f704fb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: df02c0d0eb08dc9428e158402f704fb5, type: 3}
+      propertyPath: m_Name
+      value: Book4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df02c0d0eb08dc9428e158402f704fb5, type: 3}

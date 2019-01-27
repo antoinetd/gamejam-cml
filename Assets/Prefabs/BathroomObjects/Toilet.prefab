@@ -62,6 +62,7 @@ MonoBehaviour:
   LoopSound: {fileID: 8300000, guid: ecbb0e5a95199bd498a17c2e9cbf88bf, type: 3}
   actionSound1: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
   actionSound2: {fileID: 8300000, guid: 074f0618f972f274aa7909f2a32f099a, type: 3}
+  DestroyedObjectScoreValue: 3
 --- !u!1 &6449207332261265577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4767,10 +4768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2624626507856710704}
     m_Modifications:
-    - target: {fileID: 100000, guid: 9aaa179780d1a0642999b863660007c4, type: 3}
-      propertyPath: m_Name
-      value: Toilet
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9aaa179780d1a0642999b863660007c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -4814,6 +4811,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 9aaa179780d1a0642999b863660007c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9aaa179780d1a0642999b863660007c4, type: 3}
+      propertyPath: m_Name
+      value: Toilet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aaa179780d1a0642999b863660007c4, type: 3}

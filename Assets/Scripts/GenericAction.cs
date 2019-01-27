@@ -10,9 +10,16 @@ public class GenericAction : MonoBehaviour, IInteractable
     public AudioClip actionSound1;
     public AudioClip actionSound2;
     public Vector3 ForceVector;
+    public float DestroyedObjectScoreValue;
 
     public void OnAction()
     {
+        // Only change the score if ActionCalled was initially off
+        if (ActionCalled == false)
+        {
+            GameManager_Scoring.GetInstance().AddToScore(DestroyedObjectScoreValue);
+        }
+
         // Action to be called by the operator
         // When the action is called, it will apply a force to the plate 
         ActionCalled = true;
