@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 1570463314760065151}
   - component: {fileID: 1570463314760065148}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Particles_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1570463314760065150
 Transform:
   m_ObjectHideFlags: 0
