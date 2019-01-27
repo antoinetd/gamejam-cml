@@ -21,7 +21,7 @@ public class SceneMgr : MonoBehaviour
     {
         currentTimer -= Time.deltaTime;
 
-        if (Input.GetButtonDown("ChangeToParent") || currentTimer < 0f)
+        if ((Input.GetButtonDown("ChangeToParent") || currentTimer < 0f) && doSwitch == false)
         {
             KidControls kidControls = (KidControls)FindObjectOfType(typeof(KidControls));
             // If we are already in parent mode do nothing
