@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameScore: 0
+  GameRoundTime: 120
 --- !u!1 &1468167540
 GameObject:
   m_ObjectHideFlags: 0
