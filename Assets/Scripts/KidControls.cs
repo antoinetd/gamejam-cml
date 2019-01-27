@@ -97,7 +97,7 @@ public class KidControls : MonoBehaviour
     {
         Vector3 transformPos = transform.position;
         transformPos.z = transformPos.z + 0.3f;
-        Collider[] hitColliders = Physics.OverlapSphere(transformPos, 0.3f);
+        Collider[] hitColliders = Physics.OverlapSphere(transformPos, 0.7f);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             IInteractable obj = hitColliders[i].GetComponent<IInteractable>();

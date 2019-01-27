@@ -12,9 +12,11 @@ public class AI_Ctrl : MonoBehaviour
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
     private float kidParentDistance;
-    public Vector3 kidLocation; 
 
     private AIStates stateValue;
+    private float midpointParentDistance; // midpoint between kid and closest object
+    private Vector3 midpointPosition;
+
     
     // Types
     public enum AIStates
@@ -45,22 +47,8 @@ public class AI_Ctrl : MonoBehaviour
     int frameCount = 0; 
     public void doChasing()
     {
-        if(frameCount == 5)
-        {
-            this.GetComponent<NavMeshAgent>().updatePosition = true;
-            frameCount = 0;
-        }
-        else
-        {
-            frameCount++;
-            this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
-            this.GetComponent<NavMeshAgent>().nextPosition = kid.GetComponent<Transform>().position;           
-            this.GetComponent<NavMeshAgent>().updatePosition = false;
-        }
-       
-
-
-        Debug.Log(this.GetComponent<NavMeshAgent>().destination);  
+        this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
+        // Debug.Log(this.GetComponent<NavMeshAgent>().destination);  
     }
 
     public void doBlocking()
@@ -83,6 +71,7 @@ public class AI_Ctrl : MonoBehaviour
         this.kidParentDistance = getDistance(this.gameObject, kid); 
 
         closestObjectDistance = -1;
+        midpointParentDistance = -1;
         KidControls KC = kid.GetComponent<KidControls>();
         if (KC != null)
         {
@@ -96,7 +85,13 @@ public class AI_Ctrl : MonoBehaviour
                 }
             }
         }
-        
+
+        if (closestObjectDistance != -1)
+        {
+            midpointPosition = (kid.GetComponent<Transform>().position + closestObjectPosition) / 2;
+            midpointParentDistance = (midpointPosition - this.gameObject.GetComponent<Transform>().position).magnitude;
+        }
+
     }
 
 
