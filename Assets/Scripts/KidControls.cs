@@ -42,8 +42,7 @@ public class KidControls : MonoBehaviour
             {
                 this.transform.position = history[0].position;
                 this.transform.rotation = history[0].rotation;
-                // TODO do something with 
-                //history[0].action;
+                if (history[0].action) DoAction();
                 if (history[0].playSound)
                 {
                     SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
@@ -75,20 +74,9 @@ public class KidControls : MonoBehaviour
                 rb.freezeRotation = false;
             }
 
-
             if (Input.GetButton("Button3"))
             {
-                Vector3 transformPos = transform.position;
-                transformPos.z = transformPos.z + 0.3f;
-                Collider[] hitColliders = Physics.OverlapSphere(transformPos, 0.3f);
-                for (int i = 0; i < hitColliders.Length; i++)
-                {
-                    IInteractable obj = hitColliders[i].GetComponent<IInteractable>();
-                    if (obj != null)
-                    {
-                        obj.OnAction();
-                    }
-                }
+                DoAction();
             }
 
             if (recording)
@@ -101,6 +89,21 @@ public class KidControls : MonoBehaviour
                                 playSound = Input.GetButtonDown("Button1") || Input.GetButtonDown("Button2")
                 }
                 );
+            }
+        }
+    }
+
+    private void DoAction()
+    {
+        Vector3 transformPos = transform.position;
+        transformPos.z = transformPos.z + 0.3f;
+        Collider[] hitColliders = Physics.OverlapSphere(transformPos, 0.7f);
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            IInteractable obj = hitColliders[i].GetComponent<IInteractable>();
+            if (obj != null)
+            {
+                obj.OnAction();
             }
         }
     }

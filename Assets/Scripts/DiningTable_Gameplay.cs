@@ -29,8 +29,8 @@ public class DiningTable_Gameplay : MonoBehaviour, IInteractable
     public void OnAction()
     {
         ActionCalled = true;
-
-        Vector3 Force = new Vector3(20.0f, 30.0f, 20.0f);
+        
+        Vector3 Force = new Vector3(Random.Range(-40f, 40f), 30.0f, Random.Range(-40, 40));
         PlateRigidBody.AddForce(Force);
 
         SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);

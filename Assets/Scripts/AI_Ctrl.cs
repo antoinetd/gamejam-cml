@@ -7,8 +7,16 @@ public class AI_Ctrl : MonoBehaviour
     // Members
    
     public GameObject agent;
-    public GameObject kid;   
-    
+    public GameObject kid;
+
+    private float closestObjectDistance;
+    private Vector3 closestObjectPosition;
+    private float kidParentDistance;
+    private float midpointParentDistance; // midpoint between kid and closest object
+    private Vector3 midpointPosition;
+
+
+
     private AIStates stateValue = 0;
     
     // Types
@@ -17,6 +25,8 @@ public class AI_Ctrl : MonoBehaviour
         chasing,
         blocking,
         idle
+
+          
     };
 
                 
@@ -24,7 +34,7 @@ public class AI_Ctrl : MonoBehaviour
 
     //Utility functions
     public void setState(int someState)
-    {
+    {        
         switch(someState)
         {
             case 0:
@@ -56,6 +66,39 @@ public class AI_Ctrl : MonoBehaviour
         //
     }
 
+    float getDistance(GameObject Ob1, GameObject Ob2)
+    {
+        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob2.GetComponent<Transform>().position);
+    }
+
+    public void doDistances()
+    {
+        kidParentDistance = getDistance(this.gameObject, kid.gameObject);
+        Debug.Log(kidParentDistance);
+
+        closestObjectDistance = -1;
+        midpointParentDistance = -1;
+        KidControls KC = kid.GetComponent<KidControls>();
+        if (KC != null)
+        {
+            foreach (GameObject currentGO in kid.GetComponent<KidControls>().closestsInteractables)
+            {
+                float kidCurrentGODistance = getDistance(currentGO, kid);
+                if (kidCurrentGODistance > closestObjectDistance)
+                {
+                    closestObjectDistance = kidCurrentGODistance;
+                    closestObjectPosition = currentGO.GetComponent<Transform>().position;
+                }
+            }
+        }
+
+        if (closestObjectDistance != -1)
+        {
+            midpointPosition = (kid.GetComponent<Transform>().position + closestObjectPosition) / 2;
+            midpointParentDistance = (midpointPosition - this.gameObject.GetComponent<Transform>().position).magnitude;
+        }
+
+    }
 
 
     // Start is called before the first frame update
@@ -68,7 +111,18 @@ public class AI_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        doDistances(); 
+
+        if (kidParentDistance > 1.0)
+        {
+            stateValue = AIStates.chasing; 
+        }
+
+        if (closestObjectDistance < 1.0)
+        {
+            stateValue = AIStates.blocking;
+        }
+             
       switch(stateValue)
         {
             case AIStates.blocking:
