@@ -27,9 +27,13 @@ public class GameManager_ScoreDisplay : MonoBehaviour
     {
         GameScore = GameManager_Scoring.GetInstance().GetGameScore();
 
+        
         currentTimer -= Time.deltaTime;
 
-
+        if (currentTimer <= 0.0)
+        {
+            currentTimer = 0.0f;
+        }
 
         TextMeshObject.text = "Nostalgia Points: " + string.Format("{0:N0}", GameScore) + "\nCountdown: " + string.Format("{0:N0}", currentTimer);
     }
