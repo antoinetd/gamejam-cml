@@ -11,9 +11,12 @@ public class AI_Ctrl : MonoBehaviour
 
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
-    private float kidParentDistance; 
+    private float kidParentDistance;
+    private float midpointParentDistance; // midpoint between kid and closest object
+    private Vector3 midpointPosition;
 
-    
+
+
     private AIStates stateValue = 0;
     
     // Types
@@ -65,14 +68,16 @@ public class AI_Ctrl : MonoBehaviour
 
     float getDistance(GameObject Ob1, GameObject Ob2)
     {
-        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob1.GetComponent<Transform>().position);
+        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob2.GetComponent<Transform>().position);
     }
 
     public void doDistances()
     {
         kidParentDistance = getDistance(this.gameObject, kid.gameObject);
+        Debug.Log(kidParentDistance);
 
         closestObjectDistance = -1;
+        midpointParentDistance = -1;
         KidControls KC = kid.GetComponent<KidControls>();
         if (KC != null)
         {
@@ -86,7 +91,13 @@ public class AI_Ctrl : MonoBehaviour
                 }
             }
         }
-        
+
+        if (closestObjectDistance != -1)
+        {
+            midpointPosition = (kid.GetComponent<Transform>().position + closestObjectPosition) / 2;
+            midpointParentDistance = (midpointPosition - this.gameObject.GetComponent<Transform>().position).magnitude;
+        }
+
     }
 
 
