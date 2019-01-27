@@ -47,13 +47,12 @@ public class AI_Ctrl : MonoBehaviour
     int frameCount = 0; 
     public void doChasing()
     {
-        this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
-        // Debug.Log(this.GetComponent<NavMeshAgent>().destination);  
+        this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;       
     }
 
     public void doBlocking()
     {
-       // this.GetComponent<NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+       
     }
 
     public void doIdle()
@@ -105,14 +104,19 @@ public class AI_Ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {       
-        doDistances();
+        doDistances();     
       
-        Debug.Log(kidParentDistance);
 
-        if (kidParentDistance > 0.01f)
-        {           
-            setState(1); 
-        }       
+       
+        
+        if (kidParentDistance > 1.0f)
+        {
+            setState(1);
+        }
+        else
+        {
+            setState(0); 
+        }
              
       switch(stateValue)
         {
