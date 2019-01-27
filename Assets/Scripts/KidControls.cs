@@ -33,7 +33,7 @@ public class KidControls : MonoBehaviour
 
     private float parentDistance;
 
-    List<SimpleTransform> history;
+    public List<SimpleTransform> history;
 
     // Start is called before the first frame update
     void Start()

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParentManualControls : MonoBehaviour
 {
+    public bool activateManualControls = false;
+
     public float movementSpeed = 0.2f;
     public float turnSpeed = 60.0f;
 
