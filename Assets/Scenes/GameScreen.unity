@@ -1109,6 +1109,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6742475558357453438, guid: ac022d0e39cdc6341b3fc4b25919f05b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac022d0e39cdc6341b3fc4b25919f05b, type: 3}
 --- !u!1 &375904896
@@ -2079,6 +2084,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6742475558357453438, guid: ac022d0e39cdc6341b3fc4b25919f05b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     - target: {fileID: 8412339181006999906, guid: ac022d0e39cdc6341b3fc4b25919f05b,
         type: 3}
       propertyPath: m_Mass
@@ -2450,6 +2460,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6742475558357453438, guid: ac022d0e39cdc6341b3fc4b25919f05b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac022d0e39cdc6341b3fc4b25919f05b, type: 3}
 --- !u!1001 &912685277
@@ -2840,6 +2855,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6742475558357453438, guid: ac022d0e39cdc6341b3fc4b25919f05b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     - target: {fileID: 8412339181006999906, guid: ac022d0e39cdc6341b3fc4b25919f05b,
         type: 3}
       propertyPath: m_Mass
@@ -3269,6 +3289,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539034864784540380, guid: 85a5f7b1fc621b24f93afd2613e94b76,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85a5f7b1fc621b24f93afd2613e94b76, type: 3}
 --- !u!4 &1397369879 stripped
@@ -3354,6 +3379,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6742475558357453438, guid: ac022d0e39cdc6341b3fc4b25919f05b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2652f990cb10c946865c49d77c3c63a, type: 2}
     - target: {fileID: 8412339181006999906, guid: ac022d0e39cdc6341b3fc4b25919f05b,
         type: 3}
       propertyPath: m_Mass
@@ -3581,6 +3611,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7808049238619902486, guid: f2fdf1375ba383f48a006a92eed365c8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c54ab15f4d8ee749bec6a26e96ce9b2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2fdf1375ba383f48a006a92eed365c8, type: 3}
 --- !u!1 &1537099760
@@ -4680,11 +4715,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1537099761}
     m_Modifications:
-    - target: {fileID: 3315339456534967710, guid: 926b4ea1e03c0214190a1030f1cafdf1,
-        type: 3}
-      propertyPath: m_Name
-      value: SoundManager
-      objectReference: {fileID: 0}
     - target: {fileID: 3167508743542176584, guid: 926b4ea1e03c0214190a1030f1cafdf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4739,6 +4769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315339456534967710, guid: 926b4ea1e03c0214190a1030f1cafdf1,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 926b4ea1e03c0214190a1030f1cafdf1, type: 3}
