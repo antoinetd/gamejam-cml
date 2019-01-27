@@ -5,6 +5,7 @@ using UnityEngine;
 public class KidControls : MonoBehaviour
 {
     public GameObject actionSphere;
+    public GameObject parentPrefab;
 
     // Put at the beginning
     public AudioClip actionSound1;
@@ -29,6 +30,9 @@ public class KidControls : MonoBehaviour
         public bool action;
         public bool playSound;
     }
+
+    private float parentDistance;
+
     List<SimpleTransform> history;
 
     // Start is called before the first frame update
@@ -63,10 +67,12 @@ public class KidControls : MonoBehaviour
             Vector3 kidEulerAngles = transform.eulerAngles;
             kidTransform.rotation = Quaternion.Euler(0.0f, kidEulerAngles.y, 0.0f);
 
+            // Go Left
             if (Input.GetButton("Button1"))
             {
                 transform.RotateAround(leftLeg.position, new Vector3(0.0f, 1.0f, 0.0f), -rotationSpeed * Time.deltaTime);
             }
+            
             else if (Input.GetButton("Button2"))
             {
                 transform.RotateAround(rightLeg.position, new Vector3(0.0f, 1.0f, 0.0f), rotationSpeed * Time.deltaTime);
@@ -110,14 +116,27 @@ public class KidControls : MonoBehaviour
         leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, armForce));
         rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, armForce));
 
-        Collider[] hitColliders = Physics.OverlapSphere(actionSphere.transform.position, actionSphere.GetComponent<SphereCollider>().radius);
-        for (int i = 0; i < hitColliders.Length; i++)
+        AI_Ctrl ai_script = parentPrefab.GetComponent<AI_Ctrl>();
+        float parentDistance = 10.0f;
+        if (ai_script != null)
         {
-            IInteractable obj = hitColliders[i].GetComponent<IInteractable>();
-            if (obj != null)
+            parentDistance = ai_script.kidParentDistance;
+        }
+        if (parentDistance >= 2f)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(actionSphere.transform.position, actionSphere.GetComponent<SphereCollider>().radius);
+            for (int i = 0; i < hitColliders.Length; i++)
             {
-                obj.OnAction();
+                IInteractable obj = hitColliders[i].GetComponent<IInteractable>();
+                if (obj != null)
+                {
+                    obj.OnAction();
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Parent is too close");
         }
     }
 
