@@ -52,7 +52,7 @@ public class AI_Ctrl : MonoBehaviour
 
     public void doBlocking()
     {
-       
+        this.GetComponent<NavMeshAgent>().destination = midpointPosition;
     }
 
     public void doIdle()
@@ -99,7 +99,7 @@ public class AI_Ctrl : MonoBehaviour
     {
         calcDistances();          
         
-        if (kidParentDistance > 1.5f)
+        if (kidParentDistance > 3.0f)
         {
             setState(1);
         }
@@ -121,6 +121,7 @@ public class AI_Ctrl : MonoBehaviour
                 break; 
         }
 
-        Debug.Log(stateValue); 
+        Debug.Log(stateValue);
+        Debug.Log(kid.GetComponent<KidControls>().closestsInteractables.Count);
     }
 }
