@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42073c08c8ceffe428392de388c1cf8e
+guid: 44a3776c83bd579498e1059c86c34062
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,7 @@ ModelImporter:
     2100000: 09 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere015
-    4300002: Sink
+    4300000: KitchenSink
   externalObjects: {}
   materials:
     importMaterials: 1

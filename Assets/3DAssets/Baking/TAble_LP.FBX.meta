@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: 42073c08c8ceffe428392de388c1cf8e
+guid: ea76a8dfd9de2194abbc57f27cd5f1f7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 09 - Default
+    2100000: 01 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere015
-    4300002: Sink
+    4300000: Box002
   externalObjects: {}
   materials:
     importMaterials: 1

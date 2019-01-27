@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: 42073c08c8ceffe428392de388c1cf8e
+guid: dd80ed43feffbb04aa5eeed41fe3f018
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 09 - Default
+    2100000: 08 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere015
-    4300002: Sink
+    4300000: GarageLocker
   externalObjects: {}
   materials:
     importMaterials: 1
