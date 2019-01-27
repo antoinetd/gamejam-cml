@@ -1,34 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; 
 
 public class AI_Ctrl : MonoBehaviour
 {
-    // Members
-   
+    // Members   
     public GameObject agent;
     public GameObject kid;
-
+   
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
-    private float kidParentDistance; 
+    private float kidParentDistance;
+    public Vector3 kidLocation; 
 
-    
-    private AIStates stateValue = 0;
+    private AIStates stateValue;
     
     // Types
     public enum AIStates
     {
         chasing,
         blocking,
-        idle
-
-          
-    };
-
-                
-
-
+        idle          
+    };                
+    
     //Utility functions
     public void setState(int someState)
     {        
@@ -47,30 +42,45 @@ public class AI_Ctrl : MonoBehaviour
                 break;
         }
     }
-
+    int frameCount = 0; 
     public void doChasing()
     {
-        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+        if(frameCount == 5)
+        {
+            this.GetComponent<NavMeshAgent>().updatePosition = true;
+            frameCount = 0;
+        }
+        else
+        {
+            frameCount++;
+            this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
+            this.GetComponent<NavMeshAgent>().nextPosition = kid.GetComponent<Transform>().position;           
+            this.GetComponent<NavMeshAgent>().updatePosition = false;
+        }
+       
+
+
+        Debug.Log(this.GetComponent<NavMeshAgent>().destination);  
     }
 
     public void doBlocking()
     {
-        this.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
+       // this.GetComponent<NavMeshAgent>().destination = kid.gameObject.GetComponent<Transform>().position;
     }
 
     public void doIdle()
     {
-        //
+      
     }
 
     float getDistance(GameObject Ob1, GameObject Ob2)
     {
-        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob1.GetComponent<Transform>().position);
+        return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob2.GetComponent<Transform>().position);
     }
 
     public void doDistances()
     {
-        kidParentDistance = getDistance(this.gameObject, kid.gameObject);
+        this.kidParentDistance = getDistance(this.gameObject, kid); 
 
         closestObjectDistance = -1;
         KidControls KC = kid.GetComponent<KidControls>();
@@ -99,18 +109,15 @@ public class AI_Ctrl : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        doDistances(); 
+    {       
+        doDistances();
+      
+        Debug.Log(kidParentDistance);
 
-        if (kidParentDistance > 1.0)
-        {
-            stateValue = AIStates.chasing; 
-        }
-
-        if (closestObjectDistance < 1.0)
-        {
-            stateValue = AIStates.blocking;
-        }
+        if (kidParentDistance > 0.01f)
+        {           
+            setState(1); 
+        }       
              
       switch(stateValue)
         {
@@ -124,6 +131,7 @@ public class AI_Ctrl : MonoBehaviour
                 doIdle();
                 break; 
         }
-        //var something = kidScript.closestsInteractables;
+
+        Debug.Log(stateValue); 
     }
 }
