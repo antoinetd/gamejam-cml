@@ -367,12 +367,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 234949522}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &115247841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4894811737079070359, guid: 33d1f334da8385f4a8ba974a278a9827,
-    type: 3}
-  m_PrefabInstance: {fileID: 666978263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &127167921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 58566864835906046, guid: 959daf6fc43ce574ca3e856476f17ba7,
@@ -614,12 +608,24 @@ PrefabInstance:
         type: 3}
       propertyPath: kid
       value: 
-      objectReference: {fileID: 115247841}
+      objectReference: {fileID: 1207337373}
     - target: {fileID: 6929543411969797130, guid: 9ce6de32db3f61948ab81f361677ae56,
         type: 3}
       propertyPath: parent
       value: 
       objectReference: {fileID: 1597717438}
+    - target: {fileID: 600225271, guid: 9ce6de32db3f61948ab81f361677ae56, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 600225269, guid: 9ce6de32db3f61948ab81f361677ae56, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 600225269, guid: 9ce6de32db3f61948ab81f361677ae56, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce6de32db3f61948ab81f361677ae56, type: 3}
 --- !u!1001 &228519846

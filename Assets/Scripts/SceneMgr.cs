@@ -61,7 +61,7 @@ public class SceneMgr : MonoBehaviour
             }
             if (ai_ctrl != null)
             {
-                ai_ctrl.EnableParent = false;
+                ai_ctrl.enableParent = false;
             }
         }
     }
