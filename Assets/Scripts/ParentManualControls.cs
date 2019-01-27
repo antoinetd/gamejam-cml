@@ -28,7 +28,16 @@ public class ParentManualControls : MonoBehaviour
             return;
         }
 
-        bool isRunning = false;
+        
+        if (Mathf.Abs(transform.rotation.eulerAngles.x) > 45 || Mathf.Abs(transform.rotation.eulerAngles.z) > 45)
+        {
+            var rot = transform.rotation;
+            rot.x = 0f;
+            rot.z = 0f;
+            transform.rotation = rot;
+        }
+
+            bool isRunning = false;
         if (Input.GetButton("Button1") || Input.GetButton("Button2") || Input.GetButton("Button3") || Input.GetButton("Button4"))
         {
             if (stamina >= -1)
