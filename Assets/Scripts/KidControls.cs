@@ -58,7 +58,14 @@ public class KidControls : MonoBehaviour
         }
         else
         {
-            Transform transform = GetComponent<Transform>();
+            Transform kidTransform = GetComponent<Transform>();
+            if (true)
+            //if (Input.GetButton("Button4"))
+            {
+                Vector3 kidEulerAngles = transform.eulerAngles;
+                kidTransform.rotation = Quaternion.Euler(0.0f, kidEulerAngles.y, 0.0f);
+
+            }
             if (Input.GetButton("Button1"))
             {
                 transform.RotateAround(leftLeg.position, new Vector3(0.0f, 1.0f, 0.0f), -rotationSpeed * Time.deltaTime);
