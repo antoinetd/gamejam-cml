@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class AI_Ctrl : MonoBehaviour
 {
     // Public members   
-    public GameObject agent;
     public GameObject kid;
     public float biasToBlocking = 1.0f;
     public AIStates DebugAIState = AIStates.idle;
@@ -108,9 +107,5 @@ public class AI_Ctrl : MonoBehaviour
         }
 
         DebugAIState = stateValue;
-        //Debug.Log("State value  " + stateValue);
-        //Debug.Log("kidParentDistance  " + kidParentDistance);
-        //Debug.Log("midpointParentDistance  " + midpointParentDistance);
-        //Debug.Log("number of objects  " + kid.GetComponent<KidControls>().closestsInteractables.Count);
     }
 }
