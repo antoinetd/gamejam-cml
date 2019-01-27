@@ -65,7 +65,7 @@ public class AI_Ctrl : MonoBehaviour
         return Vector3.Distance(Ob1.GetComponent<Transform>().position, Ob2.GetComponent<Transform>().position);
     }
 
-    public void doDistances()
+    public void calcDistances()
     {
         this.kidParentDistance = getDistance(this.gameObject, kid); 
 
@@ -94,22 +94,12 @@ public class AI_Ctrl : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-        
-    }
-
     // Update is called once per frame
-    void Update()
-    {       
-        doDistances();     
-      
-
-       
+    void LateUpdate()
+    {
+        calcDistances();          
         
-        if (kidParentDistance > 1.0f)
+        if (kidParentDistance > 1.5f)
         {
             setState(1);
         }
