@@ -8,6 +8,8 @@ public class AI_Ctrl : MonoBehaviour
     // Members   
     public GameObject agent;
     public GameObject kid;
+    public float biasToBlocking = 1.0f;
+
    
     private float closestObjectDistance;
     private Vector3 closestObjectPosition;
@@ -27,23 +29,8 @@ public class AI_Ctrl : MonoBehaviour
     };                
     
     //Utility functions
-    public void setState(int someState)
-    {        
-        switch(someState)
-        {
-            case 0:
-                stateValue = AIStates.blocking; 
-                break;
-            case 1:
-                stateValue = AIStates.chasing;
-                break;
-            case 2:
-                stateValue = AIStates.chasing;
-                break;
-            default:
-                break;
-        }
-    }
+
+
     int frameCount = 0; 
     public void doChasing()
     {
@@ -99,16 +86,25 @@ public class AI_Ctrl : MonoBehaviour
     {
         calcDistances();          
         
-        if (kidParentDistance > 3.0f)
+        //if (kidParentDistance > maxDistance || midpointParentDistance == -1)
+        //{
+        //    setState(1);
+        //}
+        //else
+        //{
+        //    setState(0); 
+        //}
+
+        if (kidParentDistance > midpointParentDistance * biasToBlocking)
         {
-            setState(1);
+            stateValue = AIStates.chasing;
         }
         else
         {
-            setState(0); 
+            stateValue = AIStates.blocking;
         }
-             
-      switch(stateValue)
+
+        switch (stateValue)
         {
             case AIStates.blocking:
                 doBlocking();
@@ -120,8 +116,5 @@ public class AI_Ctrl : MonoBehaviour
                 doIdle();
                 break; 
         }
-
-        Debug.Log(stateValue);
-        Debug.Log(kid.GetComponent<KidControls>().closestsInteractables.Count);
     }
 }
