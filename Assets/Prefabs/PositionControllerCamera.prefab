@@ -123,12 +123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6929543411969797128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e775cc5447d404748a59fe3393168c76, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d4792c0faf87ae47bdbd9376eab48d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kid: {fileID: 0}
   parent: {fileID: 0}
-  maxKidParentDistance: 20
-  minFieldOfView: 40
-  ActionOffset: {x: 2, y: 7, z: -4}
+  maxKidParentDistance: 0
+  minFieldOfView: 0
+  ActionOffset: {x: 0, y: 0, z: 0}
   showKidParDistance: 0

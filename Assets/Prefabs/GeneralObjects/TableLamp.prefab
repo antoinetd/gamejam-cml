@@ -46,6 +46,19 @@ MonoBehaviour:
   actionSound1: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
   actionSound2: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
   ForceVector: {x: 200, y: 50, z: 200}
+--- !u!65 &3655445501378945759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227379275881365905}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6594455, y: 0.64942724, z: 0.27553692}
+  m_Center: {x: 0, y: 1.8144992e-16, z: 0.13776837}
 --- !u!1 &7643824811111331098
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,6 +97,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7643824811111331099}
     m_Modifications:
+    - target: {fileID: 100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
+      propertyPath: m_Name
+      value: TableLamp
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -127,10 +144,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
-      propertyPath: m_Name
-      value: TableLamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
