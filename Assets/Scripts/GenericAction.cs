@@ -9,6 +9,7 @@ public class GenericAction : MonoBehaviour, IInteractable
     public bool ActionCalled; // Debug Output
     public AudioClip actionSound1;
     public AudioClip actionSound2;
+    public Vector3 ForceVector;
 
     public void OnAction()
     {
@@ -16,8 +17,7 @@ public class GenericAction : MonoBehaviour, IInteractable
         // When the action is called, it will apply a force to the plate 
         ActionCalled = true;
 
-        Vector3 Force = new Vector3(Random.Range(-40f, 40f), 30.0f, Random.Range(-40, 40));
-        GetComponent<Rigidbody>().AddForce(Force);
+        GetComponent<Rigidbody>().AddForce(ForceVector);
 
         SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
 
