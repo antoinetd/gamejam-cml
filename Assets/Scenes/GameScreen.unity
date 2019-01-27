@@ -1739,6 +1739,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c42de12e7a6fe2438fe11afbfd21cd8, type: 3}
+--- !u!4 &755943716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9100930389756347619, guid: 33d1f334da8385f4a8ba974a278a9827,
+    type: 3}
+  m_PrefabInstance: {fileID: 666978263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &760583823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4250,6 +4256,11 @@ PrefabInstance:
       propertyPath: kid
       value: 
       objectReference: {fileID: 1207337373}
+    - target: {fileID: 601490703770786313, guid: 10ef6e10db6d39e4ea12bd2dce4595f8,
+        type: 3}
+      propertyPath: midPointToKid
+      value: 
+      objectReference: {fileID: 755943716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10ef6e10db6d39e4ea12bd2dce4595f8, type: 3}
 --- !u!1 &2039665934

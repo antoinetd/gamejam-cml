@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; 
+using UnityEngine.AI;
 
 public class AI_Ctrl : MonoBehaviour
 {
     // Public members   
     public GameObject kid;
-    public float biasToBlocking = 1.0f;
-    public AIStates DebugAIState = AIStates.idle;    
+    public AIStates DebugAIState = AIStates.idle;
+    public Transform midPointToKid;
 
     // Private members
     private float closestObjectDistance;
@@ -17,31 +17,59 @@ public class AI_Ctrl : MonoBehaviour
     private AIStates stateValue;
     private float midpointParentDistance; // midpoint between kid and closest object
     private Vector3 midpointPosition;
+    private float timerMax = 3f;
+    private float timerMin = 0f;
+    public bool isWaiting = false;
 
-    
+
     // Types
     public enum AIStates
     {
         chasing,
         blocking,
-        idle          
-    };                
-    
+        idle
+    };
+
 
     // Methods
     public void doChasing()
     {
-        this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;       
+        if (isWaiting == false)
+        {
+            this.GetComponent<NavMeshAgent>().speed = 1.5f;
+            this.GetComponent<NavMeshAgent>().destination = kid.GetComponent<Transform>().position;
+        }
     }
 
     public void doBlocking()
     {
-        this.GetComponent<NavMeshAgent>().destination = midpointPosition;
+        if (isWaiting == false)
+        {
+            this.GetComponent<NavMeshAgent>().speed = 2.5f;
+            this.GetComponent<NavMeshAgent>().destination = midPointToKid.transform.position;
+
+            timerMax -= Time.deltaTime;
+            if (timerMax < timerMin)
+            {
+                isWaiting = true;
+                stateValue = AIStates.idle;
+                timerMax = 3f; // reset timer
+            }
+        }
     }
 
     public void doIdle()
     {
-        // Not currently used
+        isWaiting = true;
+        this.GetComponent<NavMeshAgent>().speed = 0f;
+
+        timerMax -= Time.deltaTime;
+        if (timerMax < timerMin)
+        {
+            timerMax = 5f; // reset timer
+            isWaiting = false;
+            stateValue = AIStates.chasing;
+        }
     }
 
     float getDistance(GameObject Ob1, GameObject Ob2)
@@ -94,19 +122,18 @@ public class AI_Ctrl : MonoBehaviour
         calcDistances();
 
         // Note: if midpointParentDistance == -1, the kid is not near any objects
-        if (kidParentDistance > 2.0f)
-        {   
-            stateValue = AIStates.chasing;           
-        }
-        else
+        if (isWaiting == false)
         {
-            if (kidParentDistance * biasToBlocking < midpointParentDistance && midpointParentDistance != -1)
+            if (kidParentDistance > 2.0f)
             {
-                stateValue = AIStates.blocking;               
-            }              
+                stateValue = AIStates.chasing;
+            }
+            else
+            {
+                stateValue = AIStates.blocking;
+            }
         }
 
-       
         // State Machine - AI Behaviours 
         switch (stateValue)
         {
@@ -121,7 +148,7 @@ public class AI_Ctrl : MonoBehaviour
                 break;
         }
 
-        Debug.Log(stateValue); 
+        Debug.Log(stateValue);
 
     }
 }
