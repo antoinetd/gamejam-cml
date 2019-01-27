@@ -35,11 +35,16 @@ public class KidControls : MonoBehaviour
 
     public List<SimpleTransform> history;
 
+    public AudioClip scoldSound1;
+    public AudioClip scoldSound2;
+    public bool playingScoldSound = false;
+
     // Start is called before the first frame update
     void Start()
     {
         closestsInteractables = new List<GameObject>();
         history = new List<SimpleTransform>();
+        playingScoldSound = true;
     }
 
     // Update is called once per frame
@@ -52,7 +57,7 @@ public class KidControls : MonoBehaviour
                 this.transform.position = history[0].position;
                 this.transform.rotation = history[0].rotation;
                 if (history[0].action) DoAction();
-                if (history[0].playSound)
+                if (history[0].playSound && !playingScoldSound)
                 {
                     SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
                 }
@@ -82,7 +87,7 @@ public class KidControls : MonoBehaviour
             if (Input.GetButtonUp("Button1") || Input.GetButtonUp("Button2"))
             {
                 rb.freezeRotation = true;
-                SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
+                if (!playingScoldSound) SoundManager.instance.RandomizeSfx(actionSound1, actionSound2);
             }
             else
             {
@@ -104,6 +109,28 @@ public class KidControls : MonoBehaviour
                                 playSound = Input.GetButtonUp("Button1") || Input.GetButtonUp("Button2")
                 }
                 );
+            }
+
+            AI_Ctrl ai_script = parentPrefab.GetComponent<AI_Ctrl>();
+            float parentDistance = 10.0f;
+            if (ai_script != null)
+            {
+                parentDistance = ai_script.kidParentDistance;
+            }
+            //Debug.Log(parentDistance.ToString() + "  " + playingScoldSound.ToString());
+            if (parentDistance < 2f && !playingScoldSound)
+            {
+                if (ai_script.DebugAIState == AI_Ctrl.AIStates.blocking)
+                    SoundManager.instance.PlaySingle(scoldSound2);
+                else (ai_script.DebugAIState == AI_Ctrl.AIStates.chasing)
+                    SoundManager.instance.PlaySingle(scoldSound1);
+                playingScoldSound = true;
+                //Debug.Log("Playing");
+            }
+            else if (parentDistance > 2.2f)
+            {
+                playingScoldSound = false;
+                //Debug.Log("Too Far");
             }
         }
     }
@@ -136,7 +163,7 @@ public class KidControls : MonoBehaviour
         }
         else
         {
-            Debug.Log("Parent is too close");
+            //Debug.Log("Parent is too close");
         }
     }
 
