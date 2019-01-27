@@ -59,6 +59,7 @@ MonoBehaviour:
   actionSound1: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
   actionSound2: {fileID: 8300000, guid: aa2371481797dec418c74e97434d0f5c, type: 3}
   ForceVector: {x: 200, y: 50, z: 200}
+  DestroyedObjectScoreValue: 0
 --- !u!1 &7643824811111331098
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +146,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 576fb2241dabb7a45a41c0680dd25d1a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e65a682e105135844b6f0d808f49135a, type: 3}
 --- !u!1 &3227379275881365905 stripped
