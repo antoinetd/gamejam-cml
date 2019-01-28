@@ -11,6 +11,7 @@ public class SceneMgr : MonoBehaviour
     private bool doSwitch = false;
     public float currentTimer = 120f;
     List<KidControls.SimpleTransform> history_backup;
+    bool credit = false;
 
     private void Start()
     {
@@ -21,7 +22,11 @@ public class SceneMgr : MonoBehaviour
     private void Update()
     {
         currentTimer -= Time.deltaTime;
-
+        if (doSwitch && currentTimer < 0f && !credit)
+        {
+            credit = true;
+            SceneManager.LoadScene("CreditsScreen");
+        }
         if ((Input.GetButtonDown("ChangeToParent") || currentTimer < 0f) && doSwitch == false)
         {
             KidControls kidControls = (KidControls)FindObjectOfType(typeof(KidControls));
@@ -40,6 +45,7 @@ public class SceneMgr : MonoBehaviour
             SceneManager.LoadScene(scene.name);
 
             doSwitch = true;
+            currentTimer = 120f;
         }
 
         if (doSwitch)
@@ -49,6 +55,7 @@ public class SceneMgr : MonoBehaviour
 
         if (frameCounter == 10)
         {
+            currentTimer = 120f;
             KidControls kidControls = (KidControls)FindObjectOfType(typeof(KidControls));
 
             KidControls kidControlsNewScene = (KidControls)FindObjectOfType(typeof(KidControls));
@@ -77,6 +84,7 @@ public class SceneMgr : MonoBehaviour
             }
             GameManager_Scoring.GetInstance().isAdult = true;
         }
+        
     }
 
     public void doChangeScene(int someScene)
